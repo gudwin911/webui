@@ -19,7 +19,7 @@ function mathFunc(el) {
 		} else if (operation == "-") {
 			result -= parseFloat(input.value);
 		} else if (operation == "/" ) {
-			if (input.value == "0") {
+			if (input.value == 0) {
 				alert("На ноль делить нельзя!");
 				result = 0;
 			} else {
