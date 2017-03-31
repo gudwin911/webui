@@ -3,16 +3,18 @@
 	<head>
 		<title>Калькулятор</title>
         <meta charset="utf-8" />
+        <link rel="stylesheet" href="./main.css" />
+        <script src="./calculator.js" defer></script>	
 	</head>
     
 	<body>
-        <header>
-            <a href="./index.html">
-                <img src="./webLogo.png" alt="image HTML5" width="200" height="100" />
+       <header>
+            <a id="img" href="./index.html">
+                <img src="./webLogo.png" alt="image HTML5" width="170" height="100" />
             </a>
             <h1>Основы Web-технологий</h1>
             <nav>
-                <ul>
+                <ul id="menu">
                     <li><a href="./index.html">Главная</a></li>
                     <li><a href="./web.html">Web-технологи</a>
                         <ul>
@@ -21,7 +23,7 @@
                             <li><a href="./javaScript.html">JavaScript</a></li>
                         </ul>
                     </li>                   
-                    <li><a href="#">Калькулятор</a></li>
+                    <li><a href="./calc.html">Калькулятор</a></li>
                     <li><a href="./test.html">Тест</a></li>
                 </ul>
             </nav>
@@ -32,36 +34,36 @@
                 <thead>
                     <tr>
                         <th colspan="5">
-                            <input type="text" />
+                            <input type="text" id="input" />
                         </th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="buttons-container">
                     <tr>
-                        <th><button type="submit">7</button></th>
-                        <th><button type="submit">8</button></th>
-                        <th><button type="submit">9</button></th>
-                        <th><button type="submit">&#47;</button></th>
-                        <th><button type="submit">C</button></th>
+                        <th><button class="number" type="button" value="7">7</button></th>
+                        <th><button class="number" type="button" value="8">8</button></th>
+                        <th><button class="number" type="button" value="9">9</button></th>
+                        <th><button id="divide" class="math" type="button" value="/">&#47;</button></th>
+                        <th><button id="clear" type="button" value="C">C</button></th>
                     </tr>
                     <tr>
-                        <th><button type="submit">4</button></th>
-                        <th><button type="submit">5</button></th>
-                        <th><button type="submit">6</button></th>
-                        <th><button type="submit">&#42;</button></th>
-                        <th><button type="submit">&#177;</button></th>
+                        <th><button class="number" type="button" value="4">4</button></th>
+                        <th><button class="number" type="button" value="5">5</button></th>
+                        <th><button class="number" type="button" value="6">6</button></th>
+                        <th><button id="multiple" class="math" type="button" value="*">&#42;</button></th>
+                        <th><button id="unar" type="button" value="+-">&#177;</button></th>
                     </tr>
                     <tr>
-                        <th><button type="submit">1</button></th>
-                        <th><button type="submit">2</button></th>
-                        <th><button type="submit">3</button></th>
-                        <th><button type="submit">&#45;</button></th>
-                        <th rowspan="2"><button type="submit">&#61;</button></th>
+                        <th><button class="number" type="button" value="1">1</button></th>
+                        <th><button class="number" type="button" value="2">2</button></th>
+                        <th><button class="number" type="button" value="3">3</button></th>
+                        <th><button id="minus" class="math" type="button" value="-">&#45;</button></th>
+                        <th rowspan="2"><button id="equal" class="math" type="button" value="=">&#61;</button></th>
                     </tr>
                     <tr>
-                        <th colspan="2"><button type="submit">0</button></th>
-                        <th><button type="submit">.</button></th>
-                        <th><button type="submit">&#43;</button></th>
+                        <th colspan="2"><button class="number" type="button" value="0">0</button></th>
+                        <th><button id="pointer" type="button" value=".">.</button></th>
+                        <th><button id="plus" class="math" type="button" value="+">&#43;</button></th>
                     </tr>
                 </tbody>
             </table>                 
@@ -72,7 +74,7 @@
             </address>
             <span>&#169; Фамилия И.О., год</span>
         </footer>
-			
+		
     </body>
 
 </html>
