@@ -10,7 +10,7 @@ var q4 = document.getElementsByName("table");
 var q5 = document.getElementsByName("form");
 button.onclick = function() {
     
-    if (q1[1].checked) {
+    if (q1[0].checked) {
         result += 1;
     }
     if (q2[2].checked) {

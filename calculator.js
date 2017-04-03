@@ -4,41 +4,39 @@ var isNewNum = true;
 
 var input = document.getElementById("input"); // input field
 
-// all math buttons +, -, /, *, = 
+// all math buttons +, -, /, *
 var mathEls = document.getElementsByClassName("math");
 for(var j = 0; j < mathEls.length; j++){
   mathEls[j].addEventListener('click', mathFunc, false);
 }
 
 function mathFunc(el) {
-	if (isNewNum && operation != "=") {
-			input.value = result;
-	} else {			
+	if (!isNewNum) {
 		if (operation == "+") {
-			result += parseFloat(input.value);
+			result = parseFloat(result) + parseFloat(input.value);
 		} else if (operation == "-") {
-			result -= parseFloat(input.value);
+			result = parseFloat(result) - parseFloat(input.value);
 		} else if (operation == "/" ) {
-			if (input.value == 0) {
+			if (input.value == "0") {
 				alert("На ноль делить нельзя!");
 				result = 0;
 			} else {
-				result /= parseFloat(input.value);
+				result = parseFloat(result) / parseFloat(input.value);
 			}
 		} else if (operation == "*") {
-			result *= parseFloat(input.value);
+			result = parseFloat(result) * parseFloat(input.value);
 		} else { 
 			result = parseFloat(input.value);
-		} 
-		if (!Number.isInteger(result)) {
+		}
+	} else {
+		operation = el.currentTarget.value;
+	}
+	if (result != Number.isInteger(result)) {
 			result=result.toFixed(2);
 		}
-		//alert(result);
-		isNewNum = true;
-		input.value = result;
-		operation = el.currentTarget.value;
-		//alert(operation);
-	}
+	isNewNum = true;
+	input.value = result;
+	operation = el.currentTarget.value;
 }
 // clear C
 var clear = document.getElementById("clear");
@@ -80,4 +78,41 @@ function numberValue(e) {
 			input.value += e.currentTarget.value;
 		}
 	}
+}
+// =
+var isEqual = document.getElementById("equal");
+isEqual.onclick = function() {
+	if (operation) {
+		
+		if (!isNewNum) {
+			switch (operation) {
+				case "+":
+					result = parseFloat(result) + parseFloat(input.value);
+					break;
+				case "-":
+					result = parseFloat(result) - parseFloat(input.value);
+					break;
+				case "*":
+					result = parseFloat(result) * parseFloat(input.value);
+					break;
+				case "/":
+					if (input.value == 0) {
+						alert("Делить на 0 нельзя!");
+						result = 0;
+					} else {
+						result = parseFloat(result) / parseFloat(input.value);
+					}
+			}
+			if (result != Number.isInteger(result)) {
+			result=result.toFixed(2);
+			}
+			input.value = result;
+			isNewNum = true;
+		}
+		
+	} else {
+			isNewNum = true;
+			//result = 0;
+	}
+	operation = "";
 }
