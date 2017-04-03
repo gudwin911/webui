@@ -107,12 +107,8 @@ isEqual.onclick = function() {
 			result=result.toFixed(2);
 			}
 			input.value = result;
-			isNewNum = true;
-		}
-		
-	} else {
-			isNewNum = true;
-			//result = 0;
+		}		
 	}
+	isNewNum = true;
 	operation = "";
 }
