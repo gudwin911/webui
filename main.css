@@ -37,7 +37,9 @@ ul {
     opacity:0;
 }
 #menu li {
+    position: relative;
     display: inline;
+    padding: 1px 0;
 }
 #menu ul li {
     float:none;
@@ -47,8 +49,7 @@ ul {
     display:block;
 }
 #menu li:hover ul{
-    top: 123px;
-    left: 522px;
+    left: 0;
     border: 1px solid;
     opacity:1;
     padding: 5px;
@@ -56,23 +57,99 @@ ul {
 }
 
 /*-----------*/
-body p, div, article, h2, h3 {
+body div, article, h2, h3, form{
     background-color: white;
     border-radius: 10px;
     margin: 0;
-    padding: 5px;
+    padding: 5px 5px 0 5px;
     font-family: Arial;
     text-align: justify;
 }
+body main {
+    background-color: white;
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    text-align: justify;
+}
+div span {
+    padding: 5px 0;
+}
 #sider {
     float: right;
-    width: 170px;
+    width: 200px;
     text-align: justify;
     font-family: Times New Roman;
     margin: 5px;
     padding: 5px;
-    background-color: gray;
+    background-color: silver;
     border-radius: 10px;
+}
+#sider h3 {
+    background-color: silver;
+    font-family: Times New Roman;
+    margin: 0;
+    font-size:16px;
+    padding: 10px 10px 10px 0;
+}
+#sider p {
+    margin: 0;
+    font-size:13px;
+}
+#up {
+    background-color: white;
+    border-radius: 10px;
+    padding: 0 5px;
+}
+article p, h2{
+    margin: 0;
+    padding: 0;
+}
+article h2, h3{
+    padding-bottom: 10px;
+}
+article h3{
+    padding: 10px 0;
+}
+#down-button {
+    border-radius: 0 0 10px 10px;
+    padding: 5px;
+    
+}
+#upper-table {
+    border-radius: 10px 10px 0 0;
+}
+#test {
+    border-radius: 10px;
+    background-color: white;
+}
+#table {
+    background-color:white;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0;
+    text-align: justify;
+}
+#table tbody {
+    height: 100%;
+}
+#table tr {
+    height: 100%;
+}
+#table th {
+    width: 50px;
+    height: 100%;
+}
+#table button {
+    width: 100%;
+}
+#equal {
+    height: 100%;
+}
+#table input {
+    width: 264px;
+    
 }
 footer {
     background-color: white;
